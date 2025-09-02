@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-section">
+      <div class="avatar">B</div>
+      <h3>{{ userName }}</h3>
+      <p>Customer</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a routerLink="/dashboard" routerLinkActive="active"><i class="fa fa-home"></i> Dashboard</a>
+      <a (click)="goToApplyForLoan()"><i class="fa fa-plus-circle"></i> Apply Loan</a>
+      <a (click)="goToTrackingStatus()"><i class="fa fa-tasks"></i> Track Status</a>
+      <a routerLink="/profile"><i class="fa fa-user"></i> Profile</a>
+      <a routerLink="/logout"><i class="fa fa-sign-out-alt"></i> Logout</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="content-header">
+      <h2>Welcome, {{ userName }}</h2>
+      <p>Manage your loans and track application status easily 🚀</p>
+    </header>
+
+    <section class="actions">
+      <button class="btn btn-primary" (click)="goToApplyForLoan()">
+        <i class="fa fa-plus-circle"></i> Apply for New Loan
+      </button>
+
+      <button class="btn btn-accent" (click)="goToTrackingStatus()">
+        <i class="fa fa-tasks"></i> Track Loan Status
+      </button>
+    </section>
+
+    <section class="status-card">
+      <h3>Recent Loan Applications</h3>
+      <p>No recent applications. Click <strong>Apply for New Loan</strong> to get started.</p>
+    </section>
+  </main>
+</div>

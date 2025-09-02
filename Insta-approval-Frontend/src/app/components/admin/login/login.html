@@ -1,0 +1,71 @@
+<div class="login-background">
+  <div class="login-container">
+    <mat-card class="login-card">
+      <mat-card-header class="login-header">
+        <mat-icon class="login-icon">lock</mat-icon>
+        <mat-card-title>Welcome Back 👋</mat-card-title>
+        <mat-card-subtitle>Please login to continue</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+          
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              type="email"
+              name="email"
+              ngModel
+              required
+              #email="ngModel"
+              placeholder="Enter your email"
+            />
+            <mat-error *ngIf="email.invalid && email.touched">
+              Email is required
+            </mat-error>
+          </mat-form-field>
+
+          
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              name="password"
+              ngModel
+              required
+              minlength="4"
+              #password="ngModel"
+              placeholder="Enter your password"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              type="button"
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.invalid && password.touched">
+              Password is required (min 4 chars)
+            </mat-error>
+          </mat-form-field>
+
+          
+          <button mat-raised-button color="primary" class="login-btn" type="submit">
+            <mat-icon>login</mat-icon>
+            Login
+          </button>
+        </form>
+      </mat-card-content>
+
+      <mat-card-actions class="login-footer">
+        <span>Don’t have an account?</span>
+        <a mat-button color="accent" routerLink="/customer">Register</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

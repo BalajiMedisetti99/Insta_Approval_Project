@@ -1,0 +1,61 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <div class="card-header">
+      <div class="login-avatar">
+        <i class="fa fa-user-circle"></i>
+      </div>
+      <h2>Welcome Back 👋</h2>
+      <p>Login to <strong>Insta-Approval-App</strong> and manage your loans</p>
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <!-- Email -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Email</mat-label>
+        <span matPrefix><i class="fa fa-envelope login-icon"></i>&nbsp;</span>
+        <input
+          matInput
+          type="email"
+          name="email"
+          ngModel
+          required
+          #email="ngModel"
+          placeholder="Enter your email"
+        />
+        <mat-error *ngIf="email.invalid && email.touched">
+          Email is required
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <span matPrefix><i class="fa fa-lock login-icon"></i>&nbsp;</span>
+        <input
+          matInput
+          type="password"
+          name="password"
+          ngModel
+          required
+          minlength="4"
+          #password="ngModel"
+          placeholder="Enter password"
+        />
+        <mat-error *ngIf="password.invalid && password.touched">
+          Password is required (min 4 chars)
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" class="full-width" type="submit">
+        <i class="fa fa-sign-in-alt"></i> &nbsp; Login
+      </button>
+
+      <!-- Register Redirect -->
+      <p class="register-link">
+        <i class="fa fa-user-plus"></i> Don’t have an account?
+        <button mat-button color="accent" type="button" (click)="goToRegister()">Register</button>
+      </p>
+    </form>
+  </mat-card>
+</div>

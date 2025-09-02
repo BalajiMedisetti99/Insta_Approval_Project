@@ -1,0 +1,123 @@
+/* Background animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Container */
+.loan-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #43e97b);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+}
+
+/* Form */
+#loanApplicationForm {
+  width: 100%;
+  max-width: 450px;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  animation: fadeInUp 0.8s ease;
+}
+
+/* Title */
+.loan-container h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Labels */
+#loanApplicationForm label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #f0f0f0;
+}
+
+/* Input & Select */
+/* Style dropdown text properly */
+.input-field {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff; /* white text inside input */
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+  appearance: none; /* hide default arrow */
+}
+
+/* Dropdown arrow fix */
+.input-field::-ms-expand {
+  display: none;
+}
+
+/* Style options (for dropdown list) */
+.input-field option {
+  background: #1e293b;   /* dark background so white text is visible */
+  color: #fff;           /* white text */
+  padding: 10px;
+}
+
+/* Highlight selected option */
+.input-field option:checked {
+  background: #2563eb; /* blue highlight */
+  color: #fff;
+}
+
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff6a00, #ee0979);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(238, 9, 121, 0.5);
+}
+
+/* Messages */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Fade In */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

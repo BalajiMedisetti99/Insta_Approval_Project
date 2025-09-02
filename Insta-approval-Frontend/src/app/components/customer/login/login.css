@@ -1,0 +1,126 @@
+/* Background */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Glass card */
+mat-card.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  animation: fadeInUp 0.6s ease;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Header */
+.card-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.login-avatar {
+  font-size: 60px;
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.card-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.card-header p {
+  font-size: 14px;
+  color: #e0e7ff;
+  margin-top: 5px;
+}
+
+/* Icons inside inputs */
+.login-icon {
+  color: #ffd700;
+  font-size: 14px;
+}
+
+/* Fields */
+mat-form-field.full-width {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.mat-mdc-form-field-flex {
+  border-radius: 10px;
+  padding: 5px 12px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mat-mdc-text-field-wrapper input {
+  color: #fff !important;
+  font-size: 15px;
+}
+
+/* Buttons */
+button.full-width {
+  width: 100%;
+  margin-top: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[color="primary"] {
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+}
+
+button[color="primary"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(221, 36, 118, 0.4);
+}
+
+/* Register link */
+.register-link {
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #f8fafc;
+}
+
+.register-link i {
+  color: #ffd700;
+  margin-right: 6px;
+}
+
+.register-link button {
+  font-weight: 600;
+  text-transform: none;
+  color: #ffd700;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

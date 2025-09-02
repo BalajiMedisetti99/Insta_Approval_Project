@@ -1,0 +1,44 @@
+<div class="loan-container">
+  <h1>Loan Application</h1>
+
+  <form id="loanApplicationForm" (ngSubmit)="onSubmit()">
+    <label for="userId">User ID</label>
+    <input
+      type="number"
+      id="userId"
+      name="userId"
+      [(ngModel)]="loanApplication.userId"
+      class="input-field"
+      required
+    />
+
+    <label for="loanType">Loan Type</label>
+    <select
+      id="loanType"
+      name="loanTypeId"
+      [(ngModel)]="loanApplication.loanTypeId"
+      class="input-field"
+      required
+    >
+      <option [ngValue]="null" disabled selected>Select Loan Type</option>
+      <option *ngFor="let type of loanTypes" [ngValue]="type.id">
+        {{ type.name }}
+      </option>
+    </select>
+
+    <label for="loanAmount">Loan Amount (₹)</label>
+    <input
+      type="number"
+      id="loanAmount"
+      name="loanAmount"
+      [(ngModel)]="loanApplication.loanAmount"
+      class="input-field"
+      required
+      step="0.01"
+    />
+
+    <button type="submit" class="submit-btn">Submit Application</button>
+  </form>
+
+  <p *ngIf="message" class="message">{{ message }}</p>
+</div>

@@ -1,0 +1,64 @@
+<div class="register-container">
+  <mat-card class="register-card">
+    <div class="card-header">
+      <h2>Create Account</h2>
+      <p>Join <strong>Insta-Approval-App</strong> and apply for instant loans 🚀</p>
+    </div>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <!-- Name -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-user"></i> Full Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter your full name" />
+      </mat-form-field>
+
+      <!-- Email -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-envelope"></i> Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter your email" />
+      </mat-form-field>
+
+      <!-- Phone -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-phone"></i> Phone</mat-label>
+        <input matInput type="tel" formControlName="phone" placeholder="10-digit mobile number" />
+      </mat-form-field>
+
+      <!-- Password -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-lock"></i> Password</mat-label>
+        <input matInput type="password" formControlName="password" placeholder="Minimum 6 characters" />
+      </mat-form-field>
+
+      <!-- Address -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-home"></i> Address</mat-label>
+        <textarea matInput formControlName="address" placeholder="Enter your address"></textarea>
+      </mat-form-field>
+
+      <!-- DOB (Material Datepicker) -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-calendar"></i> Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" placeholder="Select your date of birth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <!-- CIBIL -->
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label><i class="fa fa-chart-line"></i> CIBIL Score</mat-label>
+        <input matInput type="number" formControlName="cibilScore" placeholder="Enter CIBIL Score (300 - 900)" />
+      </mat-form-field>
+
+      <!-- Buttons -->
+      <button mat-raised-button color="primary" class="full-width" [disabled]="registrationForm.invalid">
+        Register
+      </button>
+
+      <p class="login-link">
+        Already have an account?
+        <button mat-button color="accent" type="button" (click)="goToLogin()">Login</button>
+      </p>
+    </form>
+  </mat-card>
+</div>

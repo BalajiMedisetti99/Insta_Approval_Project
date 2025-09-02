@@ -1,0 +1,41 @@
+<div class="tracking-page">
+  <div class="tracking-card">
+    <!-- Header -->
+    <div class="card-header">
+      <i class="fa fa-search form-icon"></i>
+      <h2>Track Your Loan</h2>
+      <p class="subtitle">Enter your Loan ID to check status 📊</p>
+    </div>
+
+    <!-- Loan ID input (only show if no ID from route) -->
+    <div class="form-group" *ngIf="!loanStatus">
+      <label for="loanId"><i class="fa fa-id-card"></i> Loan ID</label>
+      <input
+        type="number"
+        id="loanId"
+        [(ngModel)]="loanId"
+        placeholder="Enter Loan ID"
+      />
+      <button (click)="trackLoan()" [disabled]="isLoading">
+        <i class="fa fa-search"></i>
+        {{ isLoading ? 'Checking...' : 'Track Loan' }}
+      </button>
+    </div>
+
+    <!-- Error -->
+    <div *ngIf="errorMessage" class="alert error">{{ errorMessage }}</div>
+
+    <!-- Loan Status -->
+    <div *ngIf="loanStatus" class="status-card">
+      <h3><i class="fa fa-file-alt"></i> Loan Details</h3>
+      <p><strong>Application ID:</strong> {{ loanStatus.applicationId }}</p>
+      <p><strong>User ID:</strong> {{ loanStatus.userId }}</p>
+      <p><strong>Loan Type:</strong> {{ loanStatus.loanTypeName }}</p>
+      <p><strong>Amount:</strong> ₹{{ loanStatus.loanAmount }}</p>
+      <p><strong>Date:</strong> {{ loanStatus.applicationDate | date:'dd-MMM-yyyy' }}</p>
+      <p><strong>Status:</strong> {{ loanStatus.status }}</p>
+      <p><strong>Remarks:</strong> {{ loanStatus.remarks || 'N/A' }}</p>
+      <p><strong>CIBIL Snapshot:</strong> {{ loanStatus.cibilSnapshot }}</p>
+    </div>
+  </div>
+</div>

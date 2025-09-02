@@ -1,0 +1,137 @@
+/* Background Gradient */
+/* Page background → blue gradient like login page */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* purple to blue */
+  min-height: 100vh;
+  margin: 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title → Black text */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #000; /* black */
+}
+
+
+/* Title */
+.dashboard-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* Centered Container */
+.dashboard-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Glass Card */
+.glass-card {
+  width: 90%;
+  max-width: 1100px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Filter */
+.filter-section {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.filter-section select {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.7);
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+thead {
+  background: rgba(0,0,0,0.6);
+}
+
+th {
+  padding: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+}
+
+td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  color: #2c3e50; /* readable text */
+  background: rgba(255,255,255,0.4);
+}
+
+/* Inputs */
+input[type="text"] {
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color: #2c3e50;
+  width: 140px;
+}
+
+input::placeholder {
+  color: #555;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+button {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+button.approve {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+}
+
+button.reject {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
