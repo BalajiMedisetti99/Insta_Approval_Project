@@ -16,7 +16,7 @@ import com.loan_transaction.domain.LoanStatus;
 import com.loan_transaction.dto.LoanApplicationRequestDTO;
 import com.loan_transaction.dto.LoanApplicationResponseDTO;
 import com.loan_transaction.dto.LoanTypeRequestDTO;
-import com.loan_transaction.dto.UserDTO;   // ✅ use UserDTO now
+import com.loan_transaction.dto.UserDTO; 
 import com.loan_transaction.entity.Document;
 import com.loan_transaction.entity.LoanApplication;
 import com.loan_transaction.entity.LoanType;
@@ -53,7 +53,7 @@ public class LoanServiceImpl implements LoanService {
                 .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.LOAN_TYPE_NOT_FOUND));
 
         LoanApplication loan = LoanApplication.builder()
-                .userId(user.getUserId())  // ✅ changed from getCustomerId() to getUserId()
+                .userId(user.getUserId())  // changed from getCustomerId() to getUserId()
                 .loanType(loanType)
                 .loanAmount(request.getLoanAmount())
                 .applicationDate(LocalDateTime.now())
